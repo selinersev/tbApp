@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CCEAB4314DE70ACEB4EC112 /* libPods-tbtApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3C75A2CFA53EE02951C9D6 /* libPods-tbtApp.a */; };
 		1B54306A2107195600C7A2EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5430692107195600C7A2EB /* AppDelegate.swift */; };
-		1B54306C2107195600C7A2EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B54306B2107195600C7A2EB /* ViewController.swift */; };
+		1B54306C2107195600C7A2EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B54306B2107195600C7A2EB /* MainViewController.swift */; };
 		1B54306F2107195600C7A2EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B54306D2107195600C7A2EB /* Main.storyboard */; };
 		1B5430712107195800C7A2EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5430702107195800C7A2EB /* Assets.xcassets */; };
 		1B5430742107195800C7A2EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B5430722107195800C7A2EB /* LaunchScreen.storyboard */; };
+		1B7C0A7D210B530800B28A0B /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7C0A7C210B530800B28A0B /* CustomCollectionViewCell.swift */; };
+		1B7C0A8121105FD400B28A0B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7C0A8021105FD400B28A0B /* FilterViewController.swift */; };
+		1B7C0A832111F4A900B28A0B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7C0A822111F4A900B28A0B /* Extensions.swift */; };
+		1BADEF0221086DDF008C7921 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BADEF0121086DDF008C7921 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B5430662107195600C7A2EB /* tbtApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tbtApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5430692107195600C7A2EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B54306B2107195600C7A2EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B54306B2107195600C7A2EB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1B54306E2107195600C7A2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B5430702107195800C7A2EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B5430732107195800C7A2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B5430752107195800C7A2EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B7C0A7C210B530800B28A0B /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		1B7C0A8021105FD400B28A0B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		1B7C0A822111F4A900B28A0B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1BADEF0121086DDF008C7921 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		26D14C3E01E6688F3D05CDA8 /* Pods-tbtApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tbtApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-tbtApp/Pods-tbtApp.release.xcconfig"; sourceTree = "<group>"; };
+		4A4A6AB98CB5BC9C4A7C1751 /* Pods-tbtApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tbtApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tbtApp/Pods-tbtApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6F3C75A2CFA53EE02951C9D6 /* libPods-tbtApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tbtApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CCEAB4314DE70ACEB4EC112 /* libPods-tbtApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				1B5430682107195600C7A2EB /* tbtApp */,
 				1B5430672107195600C7A2EB /* Products */,
+				53F1AF23096E71412622D537 /* Pods */,
+				534312104FA829DD8E2153DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +69,67 @@
 		1B5430682107195600C7A2EB /* tbtApp */ = {
 			isa = PBXGroup;
 			children = (
-				1B5430692107195600C7A2EB /* AppDelegate.swift */,
-				1B54306B2107195600C7A2EB /* ViewController.swift */,
+				1B7C0A842111F5D800B28A0B /* Extensions */,
+				1B7C0A7B210B52C800B28A0B /* Cells */,
+				1BADEF00210859E6008C7921 /* SupportFiles */,
+				1BADEEFF210859BE008C7921 /* Controllers */,
 				1B54306D2107195600C7A2EB /* Main.storyboard */,
+			);
+			path = tbtApp;
+			sourceTree = "<group>";
+		};
+		1B7C0A7B210B52C800B28A0B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1B7C0A7C210B530800B28A0B /* CustomCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1B7C0A842111F5D800B28A0B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B7C0A822111F4A900B28A0B /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1BADEEFF210859BE008C7921 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B54306B2107195600C7A2EB /* MainViewController.swift */,
+				1BADEF0121086DDF008C7921 /* ImageViewController.swift */,
+				1B7C0A8021105FD400B28A0B /* FilterViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1BADEF00210859E6008C7921 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1B5430692107195600C7A2EB /* AppDelegate.swift */,
 				1B5430702107195800C7A2EB /* Assets.xcassets */,
 				1B5430722107195800C7A2EB /* LaunchScreen.storyboard */,
 				1B5430752107195800C7A2EB /* Info.plist */,
 			);
-			path = tbtApp;
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		534312104FA829DD8E2153DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F3C75A2CFA53EE02951C9D6 /* libPods-tbtApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53F1AF23096E71412622D537 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A4A6AB98CB5BC9C4A7C1751 /* Pods-tbtApp.debug.xcconfig */,
+				26D14C3E01E6688F3D05CDA8 /* Pods-tbtApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B5430782107195800C7A2EB /* Build configuration list for PBXNativeTarget "tbtApp" */;
 			buildPhases = (
+				03109182BE65FEF890839A28 /* [CP] Check Pods Manifest.lock */,
 				1B5430622107195600C7A2EB /* Sources */,
 				1B5430632107195600C7A2EB /* Frameworks */,
 				1B5430642107195600C7A2EB /* Resources */,
+				93B9366E738F8FFBA32B247C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +200,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03109182BE65FEF890839A28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tbtApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93B9366E738F8FFBA32B247C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-tbtApp/Pods-tbtApp-resources.sh",
+				"${PODS_ROOT}/Gallery/Resources/Gallery.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Gallery.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tbtApp/Pods-tbtApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B5430622107195600C7A2EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B54306C2107195600C7A2EB /* ViewController.swift in Sources */,
+				1B54306C2107195600C7A2EB /* MainViewController.swift in Sources */,
+				1B7C0A832111F4A900B28A0B /* Extensions.swift in Sources */,
+				1BADEF0221086DDF008C7921 /* ImageViewController.swift in Sources */,
 				1B54306A2107195600C7A2EB /* AppDelegate.swift in Sources */,
+				1B7C0A7D210B530800B28A0B /* CustomCollectionViewCell.swift in Sources */,
+				1B7C0A8121105FD400B28A0B /* FilterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,10 +391,12 @@
 		};
 		1B5430792107195800C7A2EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A4A6AB98CB5BC9C4A7C1751 /* Pods-tbtApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = tbtApp/Info.plist;
+				DEVELOPMENT_TEAM = ZSATZE2MZ7;
+				INFOPLIST_FILE = "$(SRCROOT)/tbtApp/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,10 +410,12 @@
 		};
 		1B54307A2107195800C7A2EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26D14C3E01E6688F3D05CDA8 /* Pods-tbtApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = tbtApp/Info.plist;
+				DEVELOPMENT_TEAM = ZSATZE2MZ7;
+				INFOPLIST_FILE = "$(SRCROOT)/tbtApp/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
