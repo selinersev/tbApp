@@ -13,11 +13,26 @@ import CoreImage
 
 class FilterViewController: UIViewController,UIDocumentInteractionControllerDelegate {
 
-    fileprivate let context = CIContext(options: nil)
-    fileprivate var filterIndex = 0
+    @IBOutlet weak var editedPhotoView: UIView!
+    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var smallRatio: NSLayoutConstraint!
+    @IBOutlet weak var largeRatio: NSLayoutConstraint!
+    @IBOutlet weak var mediumRatio: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     var filteredImages = [UIImage]()
     var ratio = Ratio.small
+    var documentController: UIDocumentInteractionController!
+    var selectedImage : UIImage?
+    var instaxImage : UIImage?
+    var editedDate : String?
     
+    
+    fileprivate let context = CIContext(options: nil)
+    fileprivate var filterIndex = 0
     fileprivate let filterNameList = [
         "CIColorClamp",
         "CIColorControls",
@@ -33,22 +48,10 @@ class FilterViewController: UIViewController,UIDocumentInteractionControllerDele
         "CISRGBToneCurveToLinear"
     ]
     
-    
-    @IBOutlet weak var editedPhotoView: UIView!
-    @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var smallRatio: NSLayoutConstraint!
-    
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var largeRatio: NSLayoutConstraint!
-    @IBOutlet weak var mediumRatio: NSLayoutConstraint!
-    var documentController: UIDocumentInteractionController!
-    var selectedImage : UIImage?
-    var instaxImage : UIImage?
-    var editedDate : String?
+
     @IBAction func saveCameraRoll(_ sender: Any) {
-        guard let instaxImage = photo.toImage() else { return }
-        UIImageWriteToSavedPhotosAlbum(instaxImage, nil, nil, nil)
+        guard let instaImage = editedPhotoView.toImage() else{ return }
+        UIImageWriteToSavedPhotosAlbum(instaImage, nil, nil, nil)
     }
     
     @IBAction func instagramShare(_ sender: Any) {
@@ -59,11 +62,17 @@ class FilterViewController: UIViewController,UIDocumentInteractionControllerDele
         shareToWhatsapp()
     }
     
-    @IBOutlet weak var collectionView: UICollectionView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        editedPhotoView.layer.shadowColor = UIColor.black.cgColor
+        editedPhotoView.layer.shadowOpacity = 0.6
+        editedPhotoView.layer.shadowOffset = CGSize.zero
+        editedPhotoView.layer.shadowRadius = 6
+        
+        
         let scaledImage = self.resizeImage(image: selectedImage!)
         photo.image = selectedImage
         photo.clipsToBounds = true
@@ -81,38 +90,18 @@ class FilterViewController: UIViewController,UIDocumentInteractionControllerDele
     }
 
     override func viewWillLayoutSubviews() {
-         updateRatio()
+        updateRatio()
         super.viewWillLayoutSubviews()
     }
 
-    func updateRatio(){
-        [smallRatio,mediumRatio,largeRatio].forEach{$0?.isActive = false}
-        switch ratio {
-        case .small:
-            smallRatio.isActive = true
-        case .medium:
-            mediumRatio.isActive = true
-        case .large:
-            largeRatio.isActive = true
-        }
-        self.view.layoutIfNeeded()
-        bottomConstraint.constant = editedPhotoView.frame.height * CGFloat(0.21)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func resizeImage(image: UIImage) -> UIImage {
-        let ratio: CGFloat = 0.3
-        let resizedSize = CGSize(width: Int(image.size.width * ratio), height: Int(image.size.height * ratio))
-        UIGraphicsBeginImageContext(resizedSize)
-        image.draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return resizedImage!
-    }
+    
+    
+    //SHARE FUNCTIONS
     
     func shareToInstagram() {
         guard let instaImage = editedPhotoView.toImage() else{ return }
@@ -158,8 +147,35 @@ class FilterViewController: UIViewController,UIDocumentInteractionControllerDele
         
     }
     
-    
+    /*******************************/
 
+    //FUNCTIONS
+    
+    func updateRatio(){
+        [smallRatio,mediumRatio,largeRatio].forEach{$0?.isActive = false}
+        switch ratio {
+        case .small:
+            smallRatio.isActive = true
+        case .medium:
+            mediumRatio.isActive = true
+        case .large:
+            largeRatio.isActive = true
+        }
+        self.view.layoutIfNeeded()
+        bottomConstraint.constant = editedPhotoView.frame.height * CGFloat(0.21)
+    }
+    
+    
+    
+    func resizeImage(image: UIImage) -> UIImage {
+        let ratio: CGFloat = 0.3
+        let resizedSize = CGSize(width: Int(image.size.width * ratio), height: Int(image.size.height * ratio))
+        UIGraphicsBeginImageContext(resizedSize)
+        image.draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage!
+    }
     
     func filter(with selectedImage: UIImage, with filterName: String) -> UIImage{
         let sourceImage = CIImage(image: selectedImage)
@@ -174,9 +190,10 @@ class FilterViewController: UIViewController,UIDocumentInteractionControllerDele
         return  UIImage(cgImage: outputCGImage!)
     }
 
-
+    /*********************************/
 
 }
+
 extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredImages.count

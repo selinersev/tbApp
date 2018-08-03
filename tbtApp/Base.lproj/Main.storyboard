@@ -37,7 +37,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="rYF-BK-tCg" secondAttribute="trailing" id="0fp-Bp-XWd"/>
                                     <constraint firstItem="fTL-7D-ieI" firstAttribute="centerX" secondItem="rYF-BK-tCg" secondAttribute="centerX" id="EZ3-sO-8dh"/>
@@ -149,14 +149,6 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tz0-Wu-DVb">
-                                        <rect key="frame" x="148" y="519" width="79" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Add Filter"/>
-                                        <connections>
-                                            <action selector="addFilter:" destination="Gvp-hy-wha" eventType="touchUpInside" id="tMx-Vu-cgp"/>
-                                        </connections>
-                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="PQD-6k-4yq">
                                         <rect key="frame" x="4" y="559" width="366" height="97"/>
                                         <subviews>
@@ -184,21 +176,18 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.97294880713866183" blue="0.91851480064124602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.95686274509803926" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="PQD-6k-4yq" firstAttribute="leading" secondItem="ohE-sn-TwF" secondAttribute="leading" constant="4" id="3EM-js-bjL"/>
                                     <constraint firstItem="khx-1k-Ihq" firstAttribute="leading" secondItem="ohE-sn-TwF" secondAttribute="leading" constant="50" id="Jdb-AB-rJl"/>
-                                    <constraint firstItem="Tz0-Wu-DVb" firstAttribute="leading" secondItem="ohE-sn-TwF" secondAttribute="leading" constant="148" id="Ss5-CM-Ss2"/>
                                     <constraint firstAttribute="trailing" secondItem="PQD-6k-4yq" secondAttribute="trailing" constant="5" id="cMD-PG-Jv2"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tz0-Wu-DVb" secondAttribute="trailing" constant="148" id="pcg-Ec-69b"/>
                                     <constraint firstAttribute="trailing" secondItem="khx-1k-Ihq" secondAttribute="trailing" constant="50" id="rtx-d7-vaO"/>
-                                    <constraint firstItem="PQD-6k-4yq" firstAttribute="top" secondItem="Tz0-Wu-DVb" secondAttribute="bottom" constant="10" id="sYT-ig-u7L"/>
                                     <constraint firstAttribute="bottom" secondItem="PQD-6k-4yq" secondAttribute="bottom" constant="11" id="uBh-wf-aYZ"/>
                                     <constraint firstItem="khx-1k-Ihq" firstAttribute="centerY" secondItem="ohE-sn-TwF" secondAttribute="centerY" constant="-40" id="zFV-bf-K9u"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ohE-sn-TwF" firstAttribute="trailing" secondItem="HhT-UU-aZu" secondAttribute="trailing" id="1tJ-o8-VY2"/>
                             <constraint firstItem="ohE-sn-TwF" firstAttribute="top" secondItem="qPq-CR-cMx" secondAttribute="top" id="Mjj-vE-Jlc"/>
@@ -207,6 +196,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HhT-UU-aZu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sLV-fH-X9Y">
+                        <barButtonItem key="rightBarButtonItem" title="Add Filter" largeContentSizeImage="1" id="Rt8-mk-1iw">
+                            <connections>
+                                <action selector="addFilter:" destination="Gvp-hy-wha" id="jLL-2o-L45"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomHeight" destination="bmr-i2-zmg" id="jUA-Py-Mjb"/>
                         <outlet property="dateLabel" destination="Qdj-tR-1ZV" id="jhd-zE-3Fr"/>
@@ -390,6 +386,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6sc-9a-fKj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

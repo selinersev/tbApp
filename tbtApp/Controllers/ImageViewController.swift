@@ -27,16 +27,24 @@ class ImageViewController: UIViewController,UIScrollViewDelegate,UIDocumentInter
     @IBOutlet weak var editedImageView: UIView!
     @IBOutlet weak var bottomHeight: NSLayoutConstraint!
     
-    @IBAction func addFilter(_ sender: Any) {
-        self.performSegue(withIdentifier: "EditImage", sender: editedImageView.toImage())
-    }
     
     var selectedImage : Image?
     var activeRatio = Ratio.small
     
+    
+    @IBAction func addFilter(_ sender: Any) {
+        self.performSegue(withIdentifier: "EditImage", sender: editedImageView.toImage())
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
  
+        photoView.layer.shadowColor = UIColor.black.cgColor
+        photoView.layer.shadowOpacity = 0.6
+        photoView.layer.shadowOffset = CGSize.zero
+        photoView.layer.shadowRadius = 6
+        
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 6.0
         
@@ -62,6 +70,22 @@ class ImageViewController: UIViewController,UIScrollViewDelegate,UIDocumentInter
         let tapGestureLarge = UITapGestureRecognizer(target: self, action: #selector(self.changeLargeDimensions))
         largeDimensions.addGestureRecognizer(tapGestureLarge)
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditImage"{
+            let controller = segue.destination as! FilterViewController
+            guard let selected = sender as? UIImage else{return}
+            controller.selectedImage = selected
+            controller.editedDate = dateLabel.text
+            controller.ratio = activeRatio
+        }
+    }
+    
+    //FUNCTIONS
 
     @objc func changeSmallDimensions(){
         activeRatio = .small
@@ -93,26 +117,13 @@ class ImageViewController: UIViewController,UIScrollViewDelegate,UIDocumentInter
         bottomHeight.constant = photoView.frame.height * CGFloat(0.21)
     }
     
- 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.selectedImageView
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EditImage"{
-            let controller = segue.destination as! FilterViewController
-            guard let selected = sender as? UIImage else{return}
-            controller.selectedImage = selected
-            controller.editedDate = dateLabel.text
-            controller.ratio = activeRatio
-        }
-    }
+    /***************************/
+
     
 }
 
