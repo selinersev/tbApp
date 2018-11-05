@@ -110,7 +110,7 @@ class FilterViewController: UIViewController,UIDocumentInteractionControllerDele
             print(" Instagram isn't installed ")
             return
         }
-        guard let imageData = UIImageJPEGRepresentation(instaImage, 100) else {return}
+        guard let imageData = instaImage.jpegData(compressionQuality: 100) else {return}
         let writePath = NSString(string: NSTemporaryDirectory()).appendingPathComponent("instagram.igo")
         let url = URL(fileURLWithPath: writePath)
         
@@ -132,7 +132,7 @@ class FilterViewController: UIViewController,UIDocumentInteractionControllerDele
             print(" WhatsApp isn't installed ")
             return
         }
-        guard let imageData = UIImageJPEGRepresentation(instaImage, 100) else {return}
+        guard let imageData = instaImage.jpegData(compressionQuality: 100) else {return}
         guard let tempFile = NSURL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Documents/whatsAppTmp.wai") else { return }
         do {
             try imageData.write(to: tempFile, options: .atomic)

@@ -1,5 +1,5 @@
 PODS:
-  - Gallery (2.0.6)
+  - Gallery (2.2.0)
 
 DEPENDENCIES:
   - Gallery
@@ -9,7 +9,7 @@ SPEC REPOS:
     - Gallery
 
 SPEC CHECKSUMS:
-  Gallery: 5489ae11d8010a3cc163030f6e92d618afbdf4df
+  Gallery: 3f4c780c4b22906d6b0a5e55d12167cdc4b4fc5b
 
 PODFILE CHECKSUM: 5fd6fa71a36a5747108f53800818cd37031622c8
 
