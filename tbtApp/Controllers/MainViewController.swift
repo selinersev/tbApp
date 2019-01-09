@@ -31,7 +31,8 @@ class MainViewController: UIViewController {
         Config.Camera.recordLocation = true
         Config.tabsToShow = [.imageTab]
         Config.Camera.imageLimit = 1
-        print("aaaa")
+
+        print("bbbb")
     }
     
     override func didReceiveMemoryWarning() {
